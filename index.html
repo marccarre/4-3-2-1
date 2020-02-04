@@ -89,18 +89,23 @@
         mainTimer = setInterval(function () { countDown(); }, 1000);
       }
 
+      function reset(display) {
+        clearInterval(getReadyTimer);
+        clearInterval(mainTimer);
+        update(0, display);
+      }
+
       window.onload = function () {
         var display = document.getElementById("timer");
 
         document.getElementById("start").onclick = function() {
+          reset(display);
           var duration = 60 * parseInt(document.getElementById("duration").value, 10);
           readySteadyGo(duration, display);
         }
 
         document.getElementById("reset").onclick = function() {
-          clearInterval(getReadyTimer);
-          clearInterval(mainTimer);
-          update(0, display);
+          reset(display);
         }
       };
     </script>
