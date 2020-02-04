@@ -5,20 +5,34 @@
       background-color: black;
       color: white;
     }
+    select {
+      text-align: center;
+      text-align-last: center;
+    }
+    option {
+      text-align: left;
+    }
+    @media screen and (max-width: 480px) {
+      button, select {
+        width: 100%;
+      }
+    }
     #timer {
       font-size: 25.5vw;
     }
     </style>
   </head>
   <body>
-    <select id="duration">
-      <option value="4">4 min.</option>
-      <option value="3">3 min.</option>
-      <option value="2">2 min.</option>
-      <option value="1">1 min.</option>
-    </select>
-    <button id="start" type="button">Start!</button>
-    <button id="reset" type="button">Reset</button>
+    <div align="center">
+      <select id="duration">
+        <option value="4">4 min.</option>
+        <option value="3">3 min.</option>
+        <option value="2">2 min.</option>
+        <option value="1">1 min.</option>
+      </select>
+      <button id="start" type="button">Start!</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
     <div align="center">
       <span id="timer">00:00</span>
     </div>
